@@ -684,38 +684,7 @@ window.location.replace("#five");
 			
 			
 			
-			function save(){
-
-    document.addEventListener("deviceready", onDeviceReady, false);
-}
-
-
-
-    // PhoneGap is ready
-    //
-    function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    }
-
-    function gotFS(fileSystem) {
-        fileSystem.root.getFile("pic.jpg", {create: true, exclusive: false}, gotFileEntry, fail);
-    }
-
-    function gotFileEntry(fileEntry) {
-        fileEntry.createWriter(gotFileWriter, fail);
-    }
-
-    function gotFileWriter(writer) {
-
-        var photo = document.getElementById("info33");
-        writer.write(photo.innerHTML);
-
-    }
-
-    function fail(error) {
-        console.log(error.code);
-    }
-
+			
 </script>
 <!-- end code ko -->
 
