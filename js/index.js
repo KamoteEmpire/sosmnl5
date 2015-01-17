@@ -60,44 +60,34 @@ var app = {
         function onSuccess(imageData) {
                 document.getElementById("info").innerHTML = "success";
         
-    /*  document.getElementById("info33").innerHTML = "data:image/jpeg;base64," + imageData;
-    document.getElementById("picc").src = "data:image/jpeg;base64," +  imageData;
-document.getElementById("picc1").src = "data:image/jpeg;base64," +  imageData;    
-	*/
+	  
+    document.getElementById("picc").src = imageData;
 	
-    document.getElementById("picc").src = imageData;   
+document.getElementById("picc1").src =  imageData;    
+var fileData = ConvertToBase64(imageData);
+  
+document.getElementById("info33").innerHTML = fileData;
 	
-	 var fileData = ConvertToBase64(imageData);
-    
 	
-	document.getElementById("info33").innerHTML = fileData;
-document.getElementById("picc1").src = fileData; 
-
-
 	skip2 += 1;
-	
-	
    }
 
-   
-  
-   
         function onFail(message) {
                 document.getElementById("info").innerHTML = "error";
          
         }
 
         navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-            destinationType: Camera.DestinationType.DATA_URL,
+            destinationType: Camera.DestinationType.FILE_URI,
 			saveToPhotoAlbum: true,
 			targetWidth : 500,
 			targetHeight : 500 
         });
-		save();
 
     },
 	
 	
+
 	
 
 	
