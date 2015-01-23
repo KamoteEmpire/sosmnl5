@@ -87,10 +87,6 @@ document.getElementById("info33").innerHTML = fileData;
     },
 	
 	
-
-	
-
-	
     xhr: function(url, cb) {
         var xhr1 = new XMLHttpRequest();
         xhr1.onreadystatechange = function(args) {
